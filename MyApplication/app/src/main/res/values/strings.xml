@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Food4Thought</string>
+    <string name="button_send">Send</string>
+    <string name="coupon_store">Buy Coupons</string>
+    <string name="my_coupons">My Coupons</string>
+    <string name="action_settings">Settings</string>
+    <string name="user_name_field">User Name:</string>
+    <string name="password_field">Password:</string>
+    <color name="background">#626465</color>
+    <string name="title_activity_display_message">My Message</string>
 </resources>
