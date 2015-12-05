@@ -10,33 +10,44 @@
         android:layout_height="0dip"
         android:orientation="horizontal"
         android:layout_weight="1">
-
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/f4tlogo"/>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="bottom|right"
         android:layout_weight="1">
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="right"
             android:background="@drawable/buy_coupons"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15px"
-            android:background="@drawable/my_coupons"/>
+            android:layout_marginTop="40px"
+            android:layout_gravity="right"
+            android:background="@drawable/my_coupons"
+            android:onClick="gotoMyCoupons"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15px"
+            android:layout_marginTop="40px"
+            android:layout_gravity="right"
             android:background="@drawable/sync_schedule"
             android:onClick="gotoCreateUser"/>
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15px"
-            android:background="@drawable/lock_screen"/>
+            android:layout_marginTop="40px"
+            android:layout_gravity="right"
+            android:background="@drawable/lock_screen"
+            android:layout_marginBottom="75px" />
     </LinearLayout>
 </LinearLayout>
