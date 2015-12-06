@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Food4Thought</string>
+    <string name="emergenecy_dialer">Emergency Dialer</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="unlock_confirm">Are you sure? Unlocking forfeits all your points.</string>
 </resources>
