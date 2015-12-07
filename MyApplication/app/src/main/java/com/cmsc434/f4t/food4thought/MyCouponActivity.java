@@ -66,7 +66,11 @@ public class MyCouponActivity extends MyCouponListActivity {
                             public void onClick(DialogInterface dialog,
                                     int which) {
                                 int deletePos = MyCouponListActivity.deletePos;
+<<<<<<< HEAD
 								MyCouponListActivity.dataAdapter.remove(dataAdapter.getItem(deletePos));
+=======
+                                MyCouponListActivity.dataAdapter.remove(dataAdapter.getItem(deletePos));
+>>>>>>> 40f29324b370262abf19c785fcc4f1b0e917b8d7
                                 MyCouponListActivity.dataAdapter.notifyDataSetChanged();
                                 finish();
                             }

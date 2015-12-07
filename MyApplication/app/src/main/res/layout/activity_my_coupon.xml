@@ -246,4 +246,8 @@
                 android:id="@+id/button"/>
         </LinearLayout>
     </LinearLayout>
+<<<<<<< HEAD
 </LinearLayout>
+=======
+</LinearLayout>
+>>>>>>> 40f29324b370262abf19c785fcc4f1b0e917b8d7
