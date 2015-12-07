@@ -24,5 +24,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.cmsc434.f4t.food4thought.MainActivity" />
         </activity>
+				<activity
+            android:name=".MyCouponActivity"
+            android:label="MyCoupon"
+            android:parentActivityName=".MyCouponListActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cmsc434.f4t.food4thought.MyCouponListActivity" />
+        </activity>
     </application>
 </manifest>
