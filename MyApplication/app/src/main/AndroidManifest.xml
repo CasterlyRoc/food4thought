@@ -15,5 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+				<activity
+            android:name=".MyCouponListActivity"
+            android:label="MyCouponList"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="portrait" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.cmsc434.f4t.food4thought.MainActivity" />
+        </activity>
     </application>
 </manifest>

@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void gotoMyCoupon(View view){
-        Intent intent = new Intent(this, MyCouponList.class);
+        Intent intent = new Intent(this, MyCouponListActivity.class);
         startActivity(intent);
     }
 }
