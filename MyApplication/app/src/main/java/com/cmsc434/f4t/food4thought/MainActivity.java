@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         super.onStart();
         if (setupGPS() == true) {
             Intent intent = new Intent(this, LockScreen.class);
-            startActivity(intent);
+            // startActivity(intent);
         }
     }
 
     private boolean setupGPS() {
-        boolean setup = true;
+        boolean setup = false;
 
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
         boolean enabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -40,15 +40,14 @@ public class MainActivity extends AppCompatActivity {
         if (!enabled) {
             Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
             startActivity(intent);
-            setup = false;
         } else if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                     != PackageManager.PERMISSION_GRANTED) {
 
             // Request permissions
             ActivityCompat.requestPermissions(this, new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION}, 0);
-
-            // assumes user would say yes
+        } else {
+            setup = true;
         }
 
         return setup;
