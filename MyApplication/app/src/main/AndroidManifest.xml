@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CreateUser">
+        <activity
+            android:name=".CreateUser"
+            android:parentActivityName=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,7 +33,9 @@
                 android:resource="@xml/searchable" />
         </activity>
         <activity android:name=".UnivLogin" />
-        <activity android:name=".Schedule"></activity>
+        <activity android:name=".Schedule" />
+        <activity android:name=".BuyCoupons" />
+        <activity android:name=".Ind_Coupon"></activity>
     </application>
 
 </manifest>

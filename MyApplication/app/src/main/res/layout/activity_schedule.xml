@@ -4,7 +4,31 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background">
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/schedule"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        android:gravity="center"
+        android:layout_margin="5px"
+        android:includeFontPadding="false"
+        android:text="@string/schedule_accept"/>
+    <Button
+        android:id="@+id/button1"
+        style="?android:attr/buttonStyleToggle"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="20px"
+        android:layout_marginBottom="15px"
+        android:text="Home"
+        android:background="#1F9724"
+        android:onClick="gotoMain"/>
 
 
 </LinearLayout>
