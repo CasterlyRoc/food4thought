@@ -10,7 +10,29 @@
         android:layout_height="wrap_content"
         android:background="#ffffff"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="35dp"
         android:gravity="center_horizontal"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="300px"
+        android:background="@drawable/circle"/>
+
+    <Button
+        style="?android:attr/buttonStyleToggle"
+        android:layout_width="210dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|center"
+        android:layout_marginTop="200px"
+        android:layout_marginBottom="100px"
+        android:text="Redeem"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textSize="18dp"
+        android:background="#45AAF2"
+        android:onClick="goBack"/>
+
+
 
 </LinearLayout>

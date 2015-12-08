@@ -35,7 +35,8 @@
         <activity android:name=".UnivLogin" />
         <activity android:name=".Schedule" />
         <activity android:name=".BuyCoupons" />
-        <activity android:name=".Ind_Coupon"></activity>
+        <activity android:name=".Ind_Coupon" />
+        <activity android:name=".BuyCouponEffect"></activity>
     </application>
 
 </manifest>
