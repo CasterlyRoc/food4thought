@@ -7,4 +7,5 @@
     <color name="myCoupons">#1B4396</color>
     <color name="syncSchedule">#96429B</color>
     <color name="lockScreen">#219897</color>
+    <color name="background">#626465</color>
 </resources>

@@ -21,34 +21,27 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="bottom|right"
+        android:gravity="center|right"
         android:layout_weight="1">
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="900px"
+            android:layout_height="200px"
             android:layout_gravity="right"
             android:background="@drawable/buy_coupons"
-            android:onClick="gotoBuyCoupons"/>
+            android:onClick="gotoBuyCoupons" />
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="900px"
+            android:layout_height="200px"
             android:layout_marginTop="40px"
             android:layout_gravity="right"
             android:background="@drawable/my_coupons"
-            android:onClick="gotoMyCoupons"/>
+            android:onClick="goToMyCoupon"/>
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="900px"
+            android:layout_height="200px"
             android:layout_marginTop="40px"
             android:layout_gravity="right"
             android:background="@drawable/sync_schedule"
-            android:onClick="gotoCreateUser"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="40px"
-            android:layout_gravity="right"
-            android:background="@drawable/lock_screen"
-            android:layout_marginBottom="75px" />
-    </LinearLayout>
+            android:onClick="gotoCreateUser" />
+   </LinearLayout>
 </LinearLayout>
