@@ -67,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        setupGPS();
         /*
         if (setupGPS() == true && checkTime() == true) {
             Intent intent = new Intent(this, LockScreen.class);
