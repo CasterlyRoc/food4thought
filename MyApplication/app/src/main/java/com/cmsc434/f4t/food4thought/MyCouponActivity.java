@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.ImageView;
 import android.widget.Button;
+import android.content.Intent;
 
 public class MyCouponActivity extends MyCouponListActivity {
 		String passedBusiness;
@@ -50,7 +51,7 @@ public class MyCouponActivity extends MyCouponListActivity {
         passedViewTitle.setText(passedTitle);
         passedViewDesc.setText(passedDescription);
 
-        /*use.setOnClickListener(new View.OnClickListener() {
+        use.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -65,13 +66,7 @@ public class MyCouponActivity extends MyCouponListActivity {
                             @Override
                             public void onClick(DialogInterface dialog,
                                     int which) {
-                                int deletePos = MyCouponListActivity.deletePos;
-<<<<<<< HEAD
-								MyCouponListActivity.dataAdapter.remove(dataAdapter.getItem(deletePos));
-=======
-                                MyCouponListActivity.dataAdapter.remove(dataAdapter.getItem(deletePos));
->>>>>>> 40f29324b370262abf19c785fcc4f1b0e917b8d7
-                                MyCouponListActivity.dataAdapter.notifyDataSetChanged();
+
                                 finish();
                             }
                         });
@@ -90,6 +85,6 @@ public class MyCouponActivity extends MyCouponListActivity {
                 dialog = popup.create();
                 dialog.show();
             }
-        });*/
+        });
     }
 }
