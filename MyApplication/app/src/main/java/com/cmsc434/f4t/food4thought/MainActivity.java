@@ -54,14 +54,14 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void gotoBuyCoupons(View view){
+    public void goToBuyCoupons(View view){
         Intent intent = new Intent(this, BuyCoupons.class);
         startActivity(intent);
     }
 
-    public void gotoMyCoupons(View view){
-        // Intent intent = new Intent(this, MyCoupons.class);
-        // startActivity(intent);
+    public void goToMyCoupons(View view){
+        Intent intent = new Intent(this, MyCoupons.class);
+        startActivity(intent);
     }
 
     @Override
