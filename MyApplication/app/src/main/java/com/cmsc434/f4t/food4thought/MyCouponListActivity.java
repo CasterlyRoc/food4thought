@@ -12,58 +12,111 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MyCouponListActivity extends AppCompatActivity{
-    public final static String image = "image";
-		public final static String title = "title";
+    public final static String title = "title";
     public final static String description = "description";
     public final static String business = "business";
 		public final static String cost = "cost";
+    public static int deletePos = 0;
+    static SimpleAdapter adapter;
 
-    static String[][] couponsList = new String[][]{
-            {"McDonalds", "Buy 1 Get 1 Free: Large French Fries", "Buy 1 Large French Fries and get a second order of equal or lesser value for free. Valid until 12/30/2015 11:59:59 PM.", "200"},
-            {"Taco Bell", "Free Taco", "Free taco. No purchase necessary. Valid until 12/30/2015 11:59:59 PM.", "100"},
-            {"Chipotle", "$1 Off Steak Bowl",  "Get $1 off for purchase of any Steak Bowl. Valid until 12/30/2015 11:59:59 PM.", "100"}
+    // Array of strings storing country names
+    String[] countries = new String[] {
+            "McDonalds",
+            "Taco Bell",
+            "Chipotle"
     };
-    ArrayList<Coupon> dataForTheAdapter = new ArrayList<Coupon>();
-    static ArrayAdapter<Coupon> dataAdapter;
-    static int deletePos;
 
+    // Array of integers points to images stored in /res/drawable-ldpi/
+    int[] flags = new int[]{
+            R.drawable.mcdonalds_logo,
+            R.drawable.taco_bell_logo,
+            R.drawable.chipotle_logo
+    };
+
+    // Array of strings to store currencies
+    String[] currency = new String[]{
+            "Buy 1 Get 1 Free: Large Fries",
+            "Free Taco",
+            "$1 Off Steak Bowl"
+    };
+
+    // Array of strings to store currencies
+    String[] descriptions = new String[]{
+            "Buy 1 Large French Fries and get another order of French Fries of equal or lesser value for free. Valid until 12/30/2015 11:59:59 PM.",
+            "Free Taco. No Purchase Necessary. Valid until 12/30/2015 11:59:59 PM.",
+            "$1 Off with purchase of any Steak Bowl. Valid until 12/30/2015 11:59:59 PM."
+    };
+
+    // Array of strings to store currencies
+    String[] pointCost = new String[]{
+            "200",
+            "100",
+            "100"
+    };
+    // Each row in the list stores country name, currency and flag
+    List<HashMap<String,String>> aList = new ArrayList<HashMap<String,String>>();
+    /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_coupons);
+        setContentView(R.layout.main);
 
-        // We get the ListView component from the layout
-        ListView lv = (ListView) findViewById(R.id.listView1);
+        
 
-        for (int counter = 0; counter < couponsList.length; counter++) {
-            dataForTheAdapter.add(new Coupon(couponsList[counter][0], couponsList[counter][1], couponsList[counter][2], Integer.parseInt(couponsList[counter][3]), counter));
+        for(int i=0;i<3;i++){
+            HashMap<String, String> hm = new HashMap<String,String>();
+            hm.put("txt", countries[i]);
+            hm.put("cur", currency[i]);
+            hm.put("flag", Integer.toString(flags[i]) );
+            hm.put("description","Description : " + descriptions[i]);
+            hm.put("cost", pointCost[i]);
+            hm.put("pos", Integer.toString(i));
+            aList.add(hm);
         }
 
-        // This is a simple adapter that accepts as parameter
-        // Context
-        // Data list
-        // The row layout that is used during the row creation
-        // The keys used to retrieve the data
-        // The View id used to show the data. The key number and the view id must match
-        dataAdapter = new ArrayAdapter<Coupon>(this, R.layout.country_list, dataForTheAdapter);
+        // Keys used in Hashmap
+        String[] from = { "flag","txt","cur" };
 
-        lv.setAdapter(dataAdapter);
+        // Ids of views in listview_layout
+        int[] to = { R.id.flag,R.id.txt,R.id.cur, };
 
-        lv.setTextFilterEnabled(true);
+        // Instantiating an adapter to store each items
+        // R.layout.listview_layout defines the layout of each item
+        adapter = new SimpleAdapter(getBaseContext(), aList, R.layout.listview_layout, from, to);
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        // Getting a reference to listview of main.xml layout file
+        ListView listView = ( ListView ) findViewById(R.id.listview);
+
+        // Setting the adapter to the listView
+        listView.setAdapter(adapter);
+
+        listView.setTextFilterEnabled(true);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view,
                                     int position, long id) {
                 Intent intent = new Intent(MyCouponListActivity.this, MyCouponActivity.class);
                 Bundle extras = new Bundle();
-                extras.putString(business, String.valueOf(dataAdapter.getItem(position).getBusiness()));
-                extras.putString(title, String.valueOf(dataAdapter.getItem(position).getTitle()));
-                extras.putString(description, String.valueOf(dataAdapter.getItem(position).getDescription()));
-                extras.putString(cost, String.valueOf(dataAdapter.getItem(position).getCost()));
+                HashMap<String, String> h = (HashMap<String, String>) adapter.getItem(position);
+
+                extras.putString(business, h.get("txt"));
+                extras.putString(title, h.get("cur"));
+                extras.putString(description, h.get("description"));
+                extras.putString(cost, h.get("cost"));
                 intent.putExtras(extras);
-                deletePos = (int) dataAdapter.getItem(position).getPosition();
+                deletePos = Integer.parseInt(h.get("pos"));
                 //dataAdapter.notifyDataSetChanged();
 
                 startActivity(intent);
@@ -72,7 +125,7 @@ public class MyCouponListActivity extends AppCompatActivity{
             }
         });
 
-        EditText myFilter = (EditText) findViewById(R.id.myFilter);
+       /* EditText myFilter = (EditText) findViewById(R.id.myFilter);
         myFilter.addTextChangedListener(new TextWatcher() {
 
             public void afterTextChanged(Editable s) {
@@ -82,9 +135,9 @@ public class MyCouponListActivity extends AppCompatActivity{
             }
 
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                dataAdapter.getFilter().filter(s.toString());
-                dataAdapter.notifyDataSetChanged();
+                adapter.getFilter().filter(s.toString());
+                adapter.notifyDataSetChanged();
             }
-        });
+        });*/
     }
 }
