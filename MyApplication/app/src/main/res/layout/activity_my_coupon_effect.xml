@@ -16,8 +16,7 @@
             android:textStyle="bold"
             android:background="#45AAF2"
             android:text="My Coupons"
-            android:textColor="#ffffff"
-            android:onClick="goToMyCoupons"/>
+            android:textColor="#ffffff" />
         <Button
             android:id="@+id/buyCoupons"
             android:layout_weight="1"
@@ -26,7 +25,8 @@
             android:layout_height="wrap_content"
             android:background="#BCBCBC"
             android:text="Buy Coupons"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:onClick="goToBuyCoupons"/>
     </LinearLayout>
     <TextView
         android:id="@+id/points"
@@ -35,7 +35,7 @@
         android:background="#ffffff"
         android:textStyle="bold"
         android:textSize="18dp"
-        android:text="Points: 500"
+        android:text="Points: 0"
         android:gravity="center_horizontal"/>
     <TextView
         android:layout_width="match_parent"
@@ -51,8 +51,7 @@
         android:layout_width="1440px"
         android:layout_height="300px"
         android:visibility="visible"
-        android:background="@drawable/coupon_1"
-        android:onClick="goToIndCoupon"/>
+        android:background="@drawable/coupon_1"/>
 
 
     <TextView
@@ -64,12 +63,5 @@
         android:textColor="#ffffff"
         android:textStyle="bold"
         />
-
-    <ImageButton
-        android:layout_width="1440px"
-        android:layout_height="300px"
-        android:background="@drawable/coupon_2"/>
-
-
 
 </LinearLayout>

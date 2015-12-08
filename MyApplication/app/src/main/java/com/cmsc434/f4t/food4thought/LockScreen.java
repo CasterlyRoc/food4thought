@@ -19,6 +19,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
+import java.util.concurrent.locks.Lock;
 
 public class LockScreen extends AppCompatActivity {
 
@@ -80,8 +81,14 @@ public class LockScreen extends AppCompatActivity {
 
         try {
             Location location = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            int lat = (int) location.getLatitude();
-            int lon = (int) location.getLongitude();
+            int lat, lon;
+            if (location == null) {
+                lat = (int) location.getLatitude();
+                lon = (int) location.getLongitude();
+            } else {
+                lat = 38;
+                lon = -76;
+            }
             if ((lat == 38 || lat == 39) && (lon == -76 || lon == -77)) {
                 Toast.makeText(LockScreen.this, "Current Location: " + location.getLatitude() + ", "
                         + location.getLongitude() + "\nYou are in class!", Toast.LENGTH_SHORT).show();
@@ -103,10 +110,8 @@ public class LockScreen extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(LockScreen.this);
         builder.setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                Intent startMain = new Intent(Intent.ACTION_MAIN);
-                startMain.addCategory(Intent.CATEGORY_HOME);
-                startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(startMain);
+                Intent intent = new Intent(LockScreen.this, MainActivity.class);
+                startActivity(intent);
             }
         });
         builder.setNegativeButton(R.string.no, new DialogInterface.OnClickListener() {

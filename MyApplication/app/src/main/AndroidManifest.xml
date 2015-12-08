@@ -39,6 +39,8 @@
         <activity android:name=".Ind_Coupon"/>
         <activity android:name=".LockScreen" />
         <activity android:name=".MyCoupons" />
+        <activity android:name=".BuyCouponEffect" />
+        <activity android:name=".MyCouponsEffect" />
     </application>
 
 </manifest>

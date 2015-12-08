@@ -5,16 +5,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Schedule extends AppCompatActivity {
+public class BuyCouponEffect extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_schedule);
+        setContentView(R.layout.activity_buy_coupon_effect);
     }
 
-    public void gotoMain(View view){
-        Intent intent = new Intent(this, LockScreen.class);
+    public void goToMyCoupons(View view){
+        Intent intent = new Intent(this, MyCouponsEffect.class);
         startActivity(intent);
     }
+
 }

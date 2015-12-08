@@ -32,7 +32,7 @@ import java.util.TimeZone;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Integer> allowedDays = new ArrayList<>();
-    final int START_HOUR = 21; // 9
+    final int START_HOUR = 1; // 9
     final int START_MIN = 30; // 30
     final int END_HOUR = 23; // 10
     final int END_MIN = 45; // 45
@@ -67,10 +67,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        /*
         if (setupGPS() == true && checkTime() == true) {
             Intent intent = new Intent(this, LockScreen.class);
             startActivity(intent);
-        }
+        }*/
     }
 
     private boolean setupGPS() {
