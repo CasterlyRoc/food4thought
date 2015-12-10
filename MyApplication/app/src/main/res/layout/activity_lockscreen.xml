@@ -12,7 +12,43 @@
         android:background="#ffffff"
         android:textStyle="bold"
         android:textSize="18dp"
-        android:text="Points: 500"
+        android:text="Total Points: 500"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#45AAF2"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="center_vertical|right"
+            android:text="Session Points:"
+            android:textColor="#ffffff"
+            android:textSize="18dp"/>
+        <TextView
+            android:id="@+id/session_points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:textSize="18dp"
+            android:text="0"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="Press to lock to unlock"
         android:gravity="center_horizontal"
         android:layout_marginTop="10dp" />
 

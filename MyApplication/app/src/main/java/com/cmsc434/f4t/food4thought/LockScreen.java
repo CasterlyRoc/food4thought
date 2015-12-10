@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.SimpleTimeZone;
 import java.util.TimeZone;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.locks.Lock;
 
 public class LockScreen extends AppCompatActivity {
@@ -28,7 +31,30 @@ public class LockScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("LockScreen", "onCreate()");
-        setupLocationListener();
+ //       setupLocationListener();
+        updatePoints();
+    }
+
+    private void updatePoints(){
+        int delay = 1000; // delay for 5 sec.
+        int period = 1000; // repeat every sec.
+        Timer timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        TextView view = (TextView) findViewById(R.id.session_points);
+                        int tmp = Integer.parseInt(view.getText().toString());
+                        tmp = tmp + 1;
+                        view.setText(Integer.toString(tmp));
+
+                    }
+                });
+            }
+        }, 0, 3000);
     }
 
     private void setupLocationListener() {
