@@ -17,6 +17,17 @@
             android:src="@drawable/f4tlogo"/>
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="40dp"
+        android:textColor="#ffffff"
+        android:typeface="serif"
+        android:text="Food 4 Thought"/>
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
