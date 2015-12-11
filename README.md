@@ -23,3 +23,10 @@ First you must install Android Studio on your computer
 		6. In Android Studio, select any folder and click Run
 		7. In the Choose Device window, click the Lauch emulator radio button
 		8. Select the emulator you created from the dropdown and click OK 
+
+# Important
+You may run into an OutOfMemoryException. To circumvent this, change the amount of RAM your emulator has to 2GB.
+	1. Go to Tools->Android->AVD Manager
+	2. Click the pencil icon on your desired emulator
+	3. Click Show Advanced Settings
+	4. Scroll down the Memory and Storage
