@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         Log.d("MainActivity", "onCreate()");
         setContentView(R.layout.activity_main);
 
-        allowedDays.add(Calendar.TUESDAY);
-        allowedDays.add(Calendar.THURSDAY);
+        // allowedDays.add(Calendar.TUESDAY);
+        // allowedDays.add(Calendar.THURSDAY);
 
     }
 
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        setupGPS();
+        // setupGPS();
         /*
         if (setupGPS() == true && checkTime() == true) {
             Intent intent = new Intent(this, LockScreen.class);

@@ -28,7 +28,7 @@ public class LockScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.d("LockScreen", "onCreate()");
-        setupLocationListener();
+        // setupLocationListener();
     }
 
     private void setupLocationListener() {
@@ -76,6 +76,8 @@ public class LockScreen extends AppCompatActivity {
 
     private boolean checkLocation() {
 
+        return true;
+        /*
         boolean valid = false;
         LocationManager locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -104,6 +106,7 @@ public class LockScreen extends AppCompatActivity {
 
         Log.d("LockScreen", "checkLocation() returning " + valid);
         return valid;
+        */
     }
 
     public void confirmUnlock(View v) {
